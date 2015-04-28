@@ -1,12 +1,11 @@
 class Tamagotchi
-  @@status = []
   @@food = 0
   @@rest = 0
   @@activity = 0
 
-
   define_method(:initialize) do |name|
     @name = name
+    @@dob = Time.new()
     @@food = 10
     @@rest = 10
     @@activity = 10
@@ -52,5 +51,9 @@ class Tamagotchi
 
   define_method(:set_food_level) do |level|
     @@food = level
+  end
+
+  define_method(:dob) do
+    dob = @@dob
   end
 end
