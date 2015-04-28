@@ -9,4 +9,16 @@ describe(Place) do
        expect(test_place.location()).to(eq('Portland'))
      end
    end
+   describe('.all') do
+     it('empty array at first') do
+       expect(Place.all()).to(eq([]))
+     end
+   end
+   describe('#save') do
+     it('stores the location you have been to') do
+       test_place = Place.new("Portland")
+       test_place.save()
+       expect(Place.all()).to(eq([test_place]))
+     end
+  end
  end
