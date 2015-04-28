@@ -21,4 +21,11 @@ describe(Place) do
        expect(Place.all()).to(eq([test_place]))
      end
   end
+   describe('.clear') do
+     it('clears out locations all places array') do
+       Place.new('portland').save()
+       Place.clear()
+       expect(Place.all()).to(eq([]))
+      end
+    end
  end
